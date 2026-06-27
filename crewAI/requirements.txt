@@ -1,0 +1,9 @@
+openai
+anthropic
+google-generativeai
+langchain
+langchain-openai
+langchain-anthropic
+langchain-google-genai
+python-dotenv
+crewai
