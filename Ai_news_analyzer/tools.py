@@ -6,8 +6,8 @@ load_dotenv()
 
 
 llm = ChatOpenAI(
-    api_key = os.getenv("OPENROUTER_API_KEY"),
     model="deepseek/deepseek-chat-v3.1"
+    api_key = os.getenv("OPENROUTER_API_KEY"),
 )
 
 
@@ -108,3 +108,4 @@ def check_credibility_with_llm(articles: list) -> str:
     
     response = llm.invoke(prompt)
     return response.content.strip()
+

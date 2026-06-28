@@ -10,8 +10,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 llm = ChatOpenAI(
-    model="gpt-3.5-turbo",
-    api_key=os.getenv("OPENAI_API_KEY")
+    model="deepseek/deepseek-chat-v3.1"
+    api_key = os.getenv("OPENROUTER_API_KEY"),
 )
 
 
@@ -75,6 +75,13 @@ news_crew = Crew(
     tasks=[collect_task, summarize_task, verify_task],
     verbose=True
 )
+
+def analyze_with_crew_agents(query: str):
+    # running the actual crew ai agents
+    result = news_crew.kickoff(
+        inputs= {"query": query}
+    )
+    return result
 
 
 # EXECUTE FUNCTION
